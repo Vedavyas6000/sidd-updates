@@ -31,8 +31,8 @@
         </header>
 
         <article class="main">
-            <div style="padding: 15px 15px 15px 15px;">
-                <form action="" method="post" id="book_reservation" onsubmit="validateForm()">
+            <div >
+                <form action="" method="post" id="book_reservation" >
                     <div class="form-all">
                         <ul>
                             <!-- HEADER -->
@@ -47,8 +47,7 @@
                             <!-- NAME AND LASTNAME -->
                             <li>
                                 <label>Name</label>
-                                <span> *</span>
-                                <div>
+                                <div class="name">
                                     <input type="text" id="firstname" placeholder="First Name" required style="margin-top: 3px;">
                                     <input type="text" id="lastname" placeholder="Last Name" required style="margin-top: 10px;">
                                 </div>
@@ -58,7 +57,6 @@
                             <!-- EMAIL -->
                             <li>
                                 <label>Email</label>
-                                <span> *</span>
                                 <div>
                                     <input type="text" id="email" required placeholder="Email Address" size="30">
                                 </div>
@@ -67,63 +65,37 @@
 
                             <!-- ROOM TYPE -->
                             <li>
-                                <label>Room Type</label>
-                                <span> *</span>
-                                <div>
-                                    <select name="roomtype" id="room" required>
-                                        <option selected disabled value="-1">Pick a room</option>
-                                        <option value="1">Ambassador Suite</option>
-                                        <option value="2">Junior Suite</option>
-                                        <option value="3">Premium Suite</option>
-                                        <option value="5">Premium Suite</option>
-                                        <option value="4">Family Room</option>
-                                        <option value="6">Premium Plus</option>
-                                    </select>
+                                <div class="room-container">
+                                    <div class="room">
+                                        <label for="room">Room Type</label>
+                                        <select name="roomtype" id="room" required>
+                                            <option selected disabled value="-1">Pick a room</option>
+                                            <option value="1">Ambassador Suite</option>
+                                            <option value="2">Junior Suite</option>
+                                            <option value="3">Premium Suite</option>
+                                            <option value="5">Premium Suite</option>
+                                            <option value="4">Family Room</option>
+                                            <option value="6">Premium Plus</option>
+                                        </select>
+                                    </div>
+                                    <div class="room">
+                                        <label for="guest">Number of Guest</label>
+                                        <select name="guest" id="guest" required>
+                                            <option selected disabled value="-1">Number of Guest</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="5">4</option>
+                                            <option value="4">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </li>
-                            <br>
-
-                            <!-- #NO OF GUEST -->
-                            <li>
-                                <label>Number of Guests</label>
-                                <span> *</span>
-                                <div>
-                                    <select name="guest" id="guest" required>
-                                        <option selected disabled value="-1">Number of Guest</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="5">4</option>
-                                        <option value="4">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <br>
-
-                            <!-- #NO OF CHILDREN -->
-                            <li>
-                                <label>Number of Childrens</label>
-                                <span> *</span>
-                                <div>
-                                    <select name="guest" id="children" required>
-                                        <option selected disabled value="-1">Number of Children</option>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="5">4</option>
-                                        <option value="4">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <br>
 
                             <!-- ARRIVAL TIME AND DATE -->
                             <li>
                                 <label>Arrival Date & Time</label>
-                                <span> *</span>
                                 <!-- Day, Month, Year -->
                                 <div>
                                 <span>
@@ -196,7 +168,6 @@
                             <!-- DEPARTURE TIME AND DATE -->
                             <li>
                                 <label>Departure Date & Time</label>
-                                <span> *</span>
                                 <!-- Day, Month, Year -->
                                 <div>
                                 <span>
@@ -268,21 +239,6 @@
                             <br>
 
                             <li>
-                                <label>Free Pickup</label>
-                                <span> *</span>
-                                <div>
-                                <span style="vertical-align:top">
-                                    <select id="freePickUp" required>
-                                        <option value="-1" selected disabled>Free Pickup</option>
-                                        <option value="AM"> Yes Please! - Pick me up on arrival </option>
-                                        <option value="PM"> No Thanks - I'll make my own way there </option>
-                                    </select>
-                                </span>
-                                </div>
-                            </li>
-                            <br>
-
-                            <li>
                                 <label>Member of Andra Mahasabha</label>
                                 <span>*</span>
                                 <div class="radio-group">
@@ -294,15 +250,31 @@
                                 </div>
                             </li>
                             
-
-                            <li>
-                                <label>Passport Number</label>
-                                <span> *</span>
+                           <div class="member">
+                            <li id="idField">
+                                <label>Id no.</label>
+                                <span>*</span>
                                 <div>
-                                    <input type="text" placeholder="A11163131" required>
+                                    <input type="text" id="idNumber" placeholder="A11163131" required>
                                 </div>
                             </li>
-                            <br>
+                            
+                            <li id="phoneField">
+                                <label>Phone Number</label>
+                                <span>*</span>
+                                <div>
+                                    <input type="text" id="phoneNumber" placeholder="Enter phone number" required>
+                                    <button id="getOtpButton" >Get OTP</button>
+                                </div>
+                            </li>
+                        </div>
+
+                        <li id="OTP verfiy">
+                            <!-- <label>Enter the Otp</label> -->
+                            <div class="otp">
+                                <!-- <input type="text" class="Otp" placeholder="Enter the Otp" required> -->
+                            </div>
+                        </li>
 
                             <li>
                                 <label>Special Request [ Optional ]</label>
@@ -340,7 +312,64 @@
         </footer>
         <!-- FOOTER END -->
         <script>
-           document.getElementById('book_reservation').addEventListener('submit', function(event) {
+            const yesRadio = document.getElementById('yes');
+            const noRadio = document.getElementById('no');
+            const idField = document.getElementById('idField');
+            const phoneField = document.getElementById('phoneField');
+            const idNumberInput = document.getElementById('idNumber');
+            const phoneNumberInput = document.getElementById('phoneNumber');
+            const getOtpButton = document.getElementById('getOtpButton');
+            const otpDiv = document.querySelector('.otp');
+            const correctOtp = '123456';
+            
+            idField.style.display = 'none';
+            phoneField.style.display = 'none';
+            getOtpButton.style.display = 'none';
+            otpDiv.style.display = 'none';
+            
+            yesRadio.addEventListener('change', function () {
+                if (this.checked) {
+                    idField.style.display = 'block';
+        phoneField.style.display = 'block';
+        idNumberInput.setAttribute('required', 'required');
+        phoneNumberInput.setAttribute('required', 'required');
+    }
+});
+
+noRadio.addEventListener('change', function () {
+    if (this.checked) {
+        idField.style.display = 'none';
+        phoneField.style.display = 'none';
+        idNumberInput.removeAttribute('required');
+        phoneNumberInput.removeAttribute('required');
+        idNumberInput.value = '';
+        phoneNumberInput.value = '';
+        getOtpButton.style.display = 'none';
+        otpDiv.style.display = 'none';
+    }
+});
+
+phoneNumberInput.addEventListener('input', function () {
+    if (phoneNumberInput.value.length === 10) {  
+        getOtpButton.style.display = 'inline-block';
+    } else {
+        getOtpButton.style.display = 'none';
+        otpDiv.style.display = 'none';
+    }
+});
+
+getOtpButton.addEventListener('click', function () {
+    otpDiv.style.display = 'block';
+    const enteredOtp = prompt('Enter the OTP');
+    if (enteredOtp === correctOtp) {
+        alert('OTP verified successfully!');
+        otpDiv.style.display = 'none';
+    } else {
+        alert('Invalid OTP. Please try again.');
+    }
+});
+
+document.getElementById('book_reservation').addEventListener('submit', function(event) {
     event.preventDefault(); 
     
     const formData = {
@@ -349,7 +378,6 @@
         email: document.getElementById('email').value,
         room: document.getElementById('room').value,
         guest: document.getElementById('guest').value,
-        children: document.getElementById('children').value,
         day: document.getElementById('day').value,
         month: document.getElementById('month').value,
         year: document.getElementById('year').value,
@@ -360,18 +388,17 @@
         departure_year: document.getElementById('departure_year').value,
         departure_hour: document.getElementById('departure_hour').value,
         timeperiodDeparture: document.getElementById('timeperiodDeparture').value,
-        freePickUp: document.getElementById('freePickUp').value,
         membership: document.querySelector('input[name="membership"]:checked') ? document.querySelector('input[name="membership"]:checked').value : '',
-        passportNumber: document.querySelector('input[placeholder="A11163131"]').value,
+        passportNumber: idNumberInput.value, 
+        phoneNumber: phoneNumberInput.value,
         specialRequest: document.querySelector('.form-textarea').value
     };
-
+    
     console.log('Form Data:', formData);
-
+    
     alert('Data stored successfully!');
 });
-
-        </script>
+</script>
     </div>
 </body>
 </html>
