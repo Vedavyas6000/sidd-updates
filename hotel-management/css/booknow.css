@@ -419,3 +419,48 @@ span {
     font-size: 15pt;
     color: black;
 }
+
+#phoneField div {
+    gap: 20px; 
+}
+
+
+#getOtpButton {
+    height: auto; 
+    width: auto; 
+    padding: 10px 20px;  
+    cursor: pointer; 
+    color: #ffffff;
+    background-color: rgb(12, 73, 34);
+    border-radius: 50px;
+    border: 2px solid black;
+    margin-top: 10px;
+}
+
+#getOtpButton:hover{
+    background-color: rgb(54, 227, 98);
+}
+
+.name{
+    display: flex;
+    gap: 30px;
+}
+
+.room-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.room {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+    flex: 1;
+}
+
+.member{
+    display: flex;
+    gap: 30px;
+}
+
